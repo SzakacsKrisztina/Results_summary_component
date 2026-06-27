@@ -5,43 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | Results summary component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
+  <!-- <style>
     .attribution { font-size: 0.6875rem; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  </style> -->
 </head>
+
 <body>
+  <div class="results-card">
+    <div class="results-card__your-res">
+      <h1 class="results-card__title">Your Result</h1>
+      <div class="results-card__score-circle">
+        <span class="results-card__score__top">76</span> 
+        <span class="results-card__score__bottom">of 100</span>
+      </div>
+      <h2 class="results-card__feedback">Great</h2>
+      <p class="results-card__desc">You scored higher than 65% of the people who have taken these tests.</p>
+    </div>
 
-  Your Result
-  76
-  of 100
+    <div class="results-card__summary">
+      <h2 class="results-card__sum-title">Summary</h2>
 
-  Great
-  You scored higher than 65% of the people who have taken these tests.
-  
-  Summary
+      <ul class="summary-list">
+        <li class="summary-element summary-element--red">
+          <span class="summary-element__name">Reaction</span>
+          <span class="summary-element__score">80 <span class="summary-element__max-score">/ 100</span></span>
+        </li>
+        <li class="summary-element summary-element--yellow">
+          <span class="summary-element__name">Memory</span>
+          <span class="summary-element__score">92 <span class="summary-element__max-score">/ 100</span></span>
+        </li>
+        <li class="summary-element summary-element--green">
+          <span class="summary-element__name">Verbal</span>
+          <span class="summary-element__score">61 <span class="summary-element__max-score">/ 100</span></span>
+        </li>
+        <li class="summary-element summary-element--blue">
+          <span class="summary-element__name">Visual</span>
+          <span class="summary-element__score">72 <span class="summary-element__max-score">/ 100</span></span>
+        </li>
+      </ul>
 
-  Reaction
-  80 / 100
+      <button class="results-card__btn">Continue</button>
 
-  Memory
-  92 / 100
+    </div>
+  </div>
 
-  Verbal
-  61 / 100
-
-  Visual
-  72 / 100
-
-  Continue
-  
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">RicoStark</a>.
   </footer>
 </body>
 </html>
