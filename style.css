@@ -1,38 +1,87 @@
 body
 {
-    font-family: 'Hanken Grotesk';
+    font-family: 'Hanken Grotesk', 'sans-serif';
     min-height: 100vh;
     /* display: flex; */
     justify-content: center;
     align-items: center;
-   
+    background-color: hsl(221, 100%, 96%);
+    font-size: 18px;
+    font-weight: 500;
 }
 
 /* mindig a legkisebb képernyőre írjuk meg a kódot, majd alul a mediaQuery-vel megmondjuk, hogy nagy képernyőn hogy legyen */
 
+/*  bg color: csak egyetlen színt kezel 
+    bg: gyűjtőtulajdonság, képet is fogad, meg gradienst is (ezt is képként kezeli)
+*/
+
 .results-card
 {
-    display:flex;
+    display:inline-flex;
     flex-direction: column;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 20px;    
 }
 
 .results-card__box
 {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
-    align-items: center;
+    max-width: 280px;
+    align-items: center; /*szöveg elrendezés */
+    border: 2px;
+    border-radius: 20px;
+    padding: 10%;
 }
 
 .results-card__your-res
 {
 
+        /* linear gradient: irány, kezdő szín, befejező szín */
+
+    background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
 
 }
 
 .results-card__summary
 {
 
+}
+
+.results-card__title
+{
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: hsla(0, 0%, 100%, 0.8);;
+}
+
+.results-card__score-circle
+{
+/* - Violet blue (circle): hsla(256, 72%, 46%, 1)
+- Persian blue (circle): hsla(241, 72%, 46%, 0) */
+
+    background: linear-gradient(to bottom,hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0) );
+    border-radius: 50%;
+    width: 70%;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.results-card__score__top
+{
+    font-size: 4rem;
+    font-weight: 800;
+    color: hsl(0, 0%, 100%);
+}
+
+.results-card__score__bottom
+{
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: hsla(241, 100%, 89%, 0.5);
 }
 
 /*   
