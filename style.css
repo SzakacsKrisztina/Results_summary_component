@@ -1,8 +1,6 @@
-body
-{
+body {
     font-family: 'Hanken Grotesk', 'sans-serif';
     min-height: 100vh;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
     background-color: hsl(221, 100%, 96%);
@@ -16,120 +14,185 @@ body
     bg: gyűjtőtulajdonság, képet is fogad, meg gradienst is (ezt is képként kezeli)
 */
 
-.results-card
-{
-    display:inline-flex;
+.results-card {
+    display: inline-flex;
     flex-direction: column;
     background-color: hsl(0, 0%, 100%);
-    border-radius: 20px;    
+    border-radius: 30px;
+    max-width: 730px;
 }
 
-.results-card__box
-{
+.results-card__box {
     display: flex;
     flex-direction: column;
-    max-width: 280px;
-    align-items: center; /*szöveg elrendezés */
+    flex: 1;
+    align-items: center;
+    /*szöveg elrendezés */
     border: 2px;
     border-radius: 20px;
-    padding: 10%;
+    width: 100;
+    padding: 2.5rem 2rem;
 }
 
-.results-card__your-res
-{
+.results-card__your-res {
 
-        /* linear gradient: irány, kezdő szín, befejező szín */
+    /* linear gradient: irány, kezdő szín, befejező szín */
 
     background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
 
 }
 
-.results-card__summary
+.results-card__summary 
 {
-
+     margin: 0;
+    padding: 0;
 }
 
-.results-card__title
-{
+.results-card__title {
     font-size: 1.125rem;
     font-weight: 500;
-    color: hsla(0, 0%, 100%, 0.8);;
+    color: hsla(0, 0%, 100%, 0.8);
 }
 
-.results-card__score-circle
-{
-/* - Violet blue (circle): hsla(256, 72%, 46%, 1)
+.results-card__score-circle {
+    /* - Violet blue (circle): hsla(256, 72%, 46%, 1)
 - Persian blue (circle): hsla(241, 72%, 46%, 0) */
 
-    background: linear-gradient(to bottom,hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0) );
+    background: linear-gradient(to bottom, hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
     border-radius: 50%;
-    width: 70%;
+    width: 8rem;
     aspect-ratio: 1/1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.results-card__score__top
-{
-    font-size: 4rem;
+
+.results-card__score__top {
+    font-size: 3.5rem;
     font-weight: 800;
     color: hsl(0, 0%, 100%);
 }
 
-.results-card__score__bottom
-{
+.results-card__score__bottom {
     font-size: 0.8rem;
     font-weight: 500;
     color: hsla(241, 100%, 89%, 0.5);
+    margin-bottom: 2PX;
 }
 
-/*   
- <div class="results-card">
-    <div class="results-card__your-res">
-      <h1 class="results-card__title">Your Result</h1>
-      <div class="results-card__score-circle">
-        <span class="results-card__score__top">76</span> 
-        <span class="results-card__score__bottom">of 100</span>
-      </div>
-      <h2 class="results-card__feedback">Great</h2>
-      <p class="results-card__desc">You scored higher than 65% of the people who have taken these tests.</p>
-    </div>
+.results-card__feedback {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: hsla(0, 0%, 100%, 0.8);
+    margin-bottom: 0px;
+}
 
-    <div class="results-card__summary">
-      <h2 class="results-card__sum-title">Summary</h2>
 
-      <ul class="summary-list">
-        <li class="summary-element summary-element--red">
-          <span class="summary-element__name">
-            <img src="./assets/images/icon-reaction.svg" alt="">
-            Reaction
-          </span>
-          <span class="summary-element__score">80 <span class="summary-element__max-score">/ 100</span></span>
-        </li>
-        <li class="summary-element summary-element--yellow">
-          <span class="summary-element__name">
-            <img src="./assets/images/icon-memory.svg" alt="">
-            Memory
-          </span>
-          <span class="summary-element__score">92 <span class="summary-element__max-score">/ 100</span></span>
-        </li>
-        <li class="summary-element summary-element--green">
-          <span class="summary-element__name">
-            <img src="./assets/images/icon-verbal.svg" alt="">
-            Verbal
-          </span>
-          <span class="summary-element__score">61 <span class="summary-element__max-score">/ 100</span></span>
-        </li>
-        <li class="summary-element summary-element--blue">
-          <span class="summary-element__name">
-            <img src="./assets/images/icon-visual.svg" alt="">
-            Visual
-          </span>
-          <span class="summary-element__score">72 <span class="summary-element__max-score">/ 100</span></span>
-        </li>
-      </ul>
+.results-card__desc {
+    padding: 0% 5%;
+    /*fent-lent bal-jobb vagy padding-inline csak a b-j-t állítja*/
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 500;
+    color: hsla(241, 100%, 89%, 0.8);
+}
 
-      <button class="results-card__btn">Continue</button>
+.results-card__sum-title
+{
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: left;
+    align-self: flex-start; /*balra igazítás*/
+    margin: 1rem 0 1rem 1.5rem;
+}
+.summary-list
+{
+    margin: 0px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    width: 80%;
+}
 
-    */
+.summary-element
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0.5rem 0;
+}
+
+.summary-element__name
+{
+    display: flex;
+    gap: 0.75rem; /*távolság a szöveg és az ikon között*/
+    text-align: left;
+    font-weight: 500;
+    justify-content: center;
+}
+
+.summary-element__score
+{
+    text-align: right;
+    font-weight: 700;
+    color:hsl(224, 30%, 27%)
+}
+
+.summary-element__max-score
+{
+    font-weight: 700;
+    color: hsla(224, 30%, 27%, 0.5);
+    
+}
+
+/* - Light red: hsl(0, 100%, 67%)
+- Orangey yellow: hsl(39, 100%, 56%)
+- Green teal: hsl(166, 100%, 37%)
+- Cobalt blue: hsl(234, 85%, 45%) */
+
+.summary-element--red
+{
+    color: hsl(0, 100%, 67%);
+    background-color: hsla(0, 100%, 67%, 0.08);
+}
+
+.summary-element--yellow
+{
+    color: hsl(39, 100%, 56%);
+    background-color: hsla(39, 100%, 56%, 0.08);
+}
+
+.summary-element--green
+{
+    color: hsl(166, 100%, 37%);
+    background-color: hsla(166, 100%, 37%, 0.08);
+}
+
+.summary-element--blue
+{
+    color: hsl(234, 85%, 45%);
+    background-color: hsla(234, 85%, 45%, 0.08);
+}
+
+.results-card__btn
+{
+    margin-top: 1rem;
+    background-color: hsl(224, 30%, 27%);
+    border-radius: 35px;
+    border-width: 0px;
+    width: 80%;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+    color: hsl(0, 0%, 100%);
+}
+
+.results-card__btn:hover
+{
+    background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+
+}
